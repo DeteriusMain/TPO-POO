@@ -83,5 +83,6 @@ public class OrdenDeCompra {
         sb.append("Aprobada: ").append(aprobada ? "Sí" : "No").append("\n");
         return sb.toString();
     }
+
 }
 
