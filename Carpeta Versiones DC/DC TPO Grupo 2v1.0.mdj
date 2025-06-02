@@ -1615,7 +1615,7 @@
 											"top": 1308,
 											"width": 391.56494140625,
 											"height": 13,
-											"text": "+presupuestoOfrecido: List<Presupuesto>",
+											"text": "+presupuestoOfrecido: List<PresupuestoClase>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3921,7 +3921,7 @@
 											"top": 671,
 											"width": 135.76708984375,
 											"height": 13,
-											"text": "Presupuesto"
+											"text": "PresupuestoClase"
 										},
 										{
 											"_type": "LabelView",
@@ -10075,7 +10075,7 @@
 								"$ref": "AAAAAAGW6EKgBK2RCvI="
 							},
 							"name": "presupuestoOfrecido",
-							"type": "List<Presupuesto>"
+							"type": "List<PresupuestoClase>"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11148,7 +11148,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Presupuesto",
+					"name": "PresupuestoClase",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
