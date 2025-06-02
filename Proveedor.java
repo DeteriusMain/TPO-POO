@@ -12,5 +12,10 @@ public class Proveedor {
 
     }
 
-
+    public Proveedor(String nombre, int id, List<Presupuesto> presupuestoOfrecido, List<OrdenDeCompra> ordenRecibida) {
+        this.nombre = nombre;
+        this.id = id;
+        this.presupuestoOfrecido = presupuestoOfrecido;
+        this.ordenRecibida = ordenRecibida;
+    }
 }

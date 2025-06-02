@@ -19,4 +19,9 @@ public class Presupuesto {
         return 0;
     }
 
+    public Presupuesto(int id, int preciosUnitarios, LocalDate envio) {
+        this.id = id;
+        this.preciosUnitarios = preciosUnitarios;
+        this.envio = envio;
+    }
 }
