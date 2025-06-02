@@ -1,22 +1,22 @@
 import java.time.LocalDate;
 
-int id;
-// Proveedor proveedor;
-int preciosUnitarios;
-LocalDate envio;
+public class Presupuesto {
+    int id;
+    // Proveedor proveedor;
+    int preciosUnitarios;
+    LocalDate envio;
 
 
-public void aceptar() {
+    public void aceptar() {
 
-}
+    }
 
-public void rechazar() {
+    public void rechazar() {
 
-}
+    }
 
-public double calcularTotal() {
-    return 0;
-}
+    public double calcularTotal() {
+        return 0;
+    }
 
-public void main() {
 }
