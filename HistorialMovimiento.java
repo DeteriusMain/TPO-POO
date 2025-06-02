@@ -63,6 +63,4 @@ public class HistorialMovimiento {
     public String resumen(){
         return "Resumen";
     }
-
-
 }
