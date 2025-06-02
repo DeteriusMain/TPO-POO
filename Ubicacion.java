@@ -30,4 +30,6 @@ public class Ubicacion {
     public String toString() {
         return "";
     };
+
+
 }
