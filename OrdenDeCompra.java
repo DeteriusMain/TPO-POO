@@ -62,7 +62,7 @@ public class OrdenDeCompra {
     }
 
     // Metodos
-    public void agregarProducto(Prodcuto prodcutos, int cantidad){
+    public void agregarProducto(Producto prodcutos, int cantidad){
         productos.add(producto);
     }
     public void aprobar() {

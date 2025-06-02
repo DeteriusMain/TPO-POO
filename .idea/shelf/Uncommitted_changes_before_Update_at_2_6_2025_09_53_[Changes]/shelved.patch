@@ -1,0 +1,214 @@
+Index: Presupuesto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.time.LocalDate;\r\n\r\npublic class Presupuesto {\r\n    int id;\r\n    // Proveedor proveedor;\r\n    int preciosUnitarios;\r\n    LocalDate envio;\r\n\r\n\r\n    public void aceptar() {\r\n\r\n    }\r\n\r\n    public void rechazar() {\r\n\r\n    }\r\n\r\n    public double calcularTotal() {\r\n        return 0;\r\n    }\r\n\r\n    public Presupuesto(int id, int preciosUnitarios, LocalDate envio) {\r\n        this.id = id;\r\n        this.preciosUnitarios = preciosUnitarios;\r\n        this.envio = envio;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Presupuesto.java b/Presupuesto.java
+--- a/Presupuesto.java	(revision 6bda78398600b8ebd757be8ba7b2d70f0495e167)
++++ b/Presupuesto.java	(date 1748868624460)
+@@ -8,20 +8,44 @@
+ 
+ 
+     public void aceptar() {
+-
+     }
+ 
+     public void rechazar() {
+-
+     }
+ 
+     public double calcularTotal() {
+         return 0;
+     }
+ 
++    // Constructor
+     public Presupuesto(int id, int preciosUnitarios, LocalDate envio) {
+         this.id = id;
+         this.preciosUnitarios = preciosUnitarios;
+         this.envio = envio;
+     }
++
++    // Getters y setters
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public int getPreciosUnitarios() {
++        return preciosUnitarios;
++    }
++
++    public void setPreciosUnitarios(int preciosUnitarios) {
++        this.preciosUnitarios = preciosUnitarios;
++    }
++
++    public LocalDate getEnvio() {
++        return envio;
++    }
++
++    public void setEnvio(LocalDate envio) {
++        this.envio = envio;
++    }
+ }
+Index: Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Proveedor.solicitarReabastecimiento;\r\n\r\npublic class Main {\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.java b/Main.java
+--- a/Main.java	(revision 6bda78398600b8ebd757be8ba7b2d70f0495e167)
++++ b/Main.java	(date 1748868372721)
+@@ -1,4 +1,3 @@
+-import Proveedor.solicitarReabastecimiento;
+ 
+ public class Main {
+ 
+Index: Proveedor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.List;\r\n\r\npublic class Proveedor {\r\n\r\n    String nombre;\r\n    int id;\r\n    List<Presupuesto> presupuestoOfrecido;\r\n    List<OrdenDeCompra> ordenRecibida;\r\n\r\n\r\n    public static class solicitarReabastecimiento(Producto producto, int cantidad) {\r\n\r\n    }\r\n\r\n    public Proveedor(String nombre, int id, List<Presupuesto> presupuestoOfrecido, List<OrdenDeCompra> ordenRecibida) {\r\n        this.nombre = nombre;\r\n        this.id = id;\r\n        this.presupuestoOfrecido = presupuestoOfrecido;\r\n        this.ordenRecibida = ordenRecibida;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Proveedor.java b/Proveedor.java
+--- a/Proveedor.java	(revision 6bda78398600b8ebd757be8ba7b2d70f0495e167)
++++ b/Proveedor.java	(date 1748868697012)
+@@ -11,11 +11,45 @@
+     public static class solicitarReabastecimiento(Producto producto, int cantidad) {
+ 
+     }
+-
++    // Constructor
+     public Proveedor(String nombre, int id, List<Presupuesto> presupuestoOfrecido, List<OrdenDeCompra> ordenRecibida) {
+         this.nombre = nombre;
+         this.id = id;
+         this.presupuestoOfrecido = presupuestoOfrecido;
+         this.ordenRecibida = ordenRecibida;
+     }
++
++    // Getters y Setters
++
++    public String getNombre() {
++        return nombre;
++    }
++
++    public void setNombre(String nombre) {
++        this.nombre = nombre;
++    }
++
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public List<Presupuesto> getPresupuestoOfrecido() {
++        return presupuestoOfrecido;
++    }
++
++    public void setPresupuestoOfrecido(List<Presupuesto> presupuestoOfrecido) {
++        this.presupuestoOfrecido = presupuestoOfrecido;
++    }
++
++    public List<OrdenDeCompra> getOrdenRecibida() {
++        return ordenRecibida;
++    }
++
++    public void setOrdenRecibida(List<OrdenDeCompra> ordenRecibida) {
++        this.ordenRecibida = ordenRecibida;
++    }
+ }
+Index: OrdenDeCompra.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.time.LocalDate;\r\nimport java.util.List;\r\nimport java.util.ArrayList;\r\n\r\npublic class OrdenDeCompra {\r\n    // Clases de OrdenDeCompra\r\n    public int id;\r\n    public Proveedor proveedor;\r\n    public List<Producto> productos;\r\n    public LocalDate fechaEmision;\r\n    public boolean aprobada;\r\n\r\n\r\n    // Constructors\r\n    public OrdenDeCompra(int id, List<Producto> productos, Proveedor proveedor) {\r\n        this.id = id;\r\n        this.productos = productos;\r\n        this.proveedor = proveedor;\r\n        this.fechaEmision = LocalDate.now();\r\n        this.aprobada = false;\r\n    }\r\n\r\n    // Getters and Setters\r\n    public boolean isAprobada() {\r\n        return aprobada;\r\n    }\r\n\r\n    public void setAprobada(boolean aprobada) {\r\n        this.aprobada = aprobada;\r\n    }\r\n\r\n    public LocalDate getFechaEmision() {\r\n        return fechaEmision;\r\n    }\r\n\r\n    public void setFechaEmision(LocalDate fechaEmision) {\r\n        this.fechaEmision = fechaEmision;\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public List<Producto> getProductos() {\r\n        return productos;\r\n    }\r\n\r\n    public void setProductos(List<Producto> productos) {\r\n        this.productos = productos;\r\n    }\r\n\r\n    public Proveedor getProveedor() {\r\n        return proveedor;\r\n    }\r\n\r\n    public void setProveedor(Proveedor proveedor) {\r\n        this.proveedor = proveedor;\r\n    }\r\n\r\n    // Metodos\r\n    public void agregarProducto(Prodcuto prodcutos, int cantidad){\r\n        productos.add(producto);\r\n    }\r\n    public void aprobar() {\r\n        this.aprobada = true;\r\n    }\r\n    public void rechazar(){\r\n        this.aprobada = false;\r\n    }\r\n    public String resumen() {\r\n        StringBuilder sb = new StringBuilder();\r\n        sb.append(\"OrdenDeCompra ID: \").append(id).append(\"\\n\");\r\n        sb.append(\"Proveedor: \").append(proveedor.getNombre()).append(\"\\n\");\r\n        sb.append(\"Fecha Emisión: \").append(fechaEmision).append(\"\\n\");\r\n        sb.append(\"Productos:\\n\");\r\n        for (Producto p : productos) {\r\n            sb.append(\"- \").append(p.getNombre()).append(\"\\n\");\r\n        }\r\n        sb.append(\"Aprobada: \").append(aprobada ? \"Sí\" : \"No\").append(\"\\n\");\r\n        return sb.toString();\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/OrdenDeCompra.java b/OrdenDeCompra.java
+--- a/OrdenDeCompra.java	(revision 6bda78398600b8ebd757be8ba7b2d70f0495e167)
++++ b/OrdenDeCompra.java	(date 1748868697004)
+@@ -62,7 +62,7 @@
+     }
+ 
+     // Metodos
+-    public void agregarProducto(Prodcuto prodcutos, int cantidad){
++    public void agregarProducto(Producto prodcutos, int cantidad){
+         productos.add(producto);
+     }
+     public void aprobar() {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"34b215b1-1033-4846-99a1-da58661130be\" name=\"Changes\" comment=\"Saqué la carpeta\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2xd7yoYmVb1R8IBhhDmBX3SRLR9\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.import\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\lucas\\IdeaProjects\\TPO-POO\\Carpeta Archivos\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"34b215b1-1033-4846-99a1-da58661130be\" name=\"Changes\" comment=\"\" />\r\n      <created>1748256353814</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1748256353814</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"eliminacion de carpeta donde se van a ubicar los archivos (no tomaba los paquetes)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748862627307</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748862627307</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Creacion archivo &quot;Presupuesto&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748865322092</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748865322092</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Creacion archivo &quot;Presupuesto&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748865475213</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748865475213</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Creacion archivo &quot;Presupuesto&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748866415655</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748866415655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Modificacion archivo &quot;Presupuesto&quot; y creacion del archivo &quot;Proveedor&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748866977134</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748866977134</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Modificacion archivo &quot;Presupuesto&quot; y modificacion del archivo &quot;Proveedor&quot;\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748867072578</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748867072578</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Moví los archivos a una carpeta para que sea mas sencillo encontrarlos y no haya tanta contaminacion visual en las clases del programa.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748867598848</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748867598848</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Saqué la carpeta\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1748867877966</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1748867877966</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"eliminacion de carpeta donde se van a ubicar los archivos (no tomaba los paquetes)\" />\r\n    <MESSAGE value=\"Creacion archivo &quot;Presupuesto&quot;\" />\r\n    <MESSAGE value=\"Modificacion archivo &quot;Presupuesto&quot; y creacion del archivo &quot;Proveedor&quot;\" />\r\n    <MESSAGE value=\"Modificacion archivo &quot;Presupuesto&quot; y modificacion del archivo &quot;Proveedor&quot;\" />\r\n    <MESSAGE value=\"Moví los archivos a una carpeta para que sea mas sencillo encontrarlos y no haya tanta contaminacion visual en las clases del programa.\" />\r\n    <MESSAGE value=\"Saqué la carpeta\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Saqué la carpeta\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6bda78398600b8ebd757be8ba7b2d70f0495e167)
++++ b/.idea/workspace.xml	(date 1748868697047)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="34b215b1-1033-4846-99a1-da58661130be" name="Changes" comment="Saqué la carpeta" />
++    <list default="true" id="34b215b1-1033-4846-99a1-da58661130be" name="Changes" comment="Saqué la carpeta">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/OrdenDeCompra.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrdenDeCompra.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Presupuesto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Presupuesto.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Proveedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proveedor.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -34,15 +40,15 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "settings.editor.selected.configurable": "editor.preferences.import"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\lucas\IdeaProjects\TPO-POO\Carpeta Archivos" />
+@@ -121,7 +127,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1748867877966</updated>
+     </task>
+-    <option name="localTasksCounter" value="9" />
++    <task id="LOCAL-00009" summary="Saqué la carpeta">
++      <option name="closed" value="true" />
++      <created>1748867947389</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1748867947389</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
