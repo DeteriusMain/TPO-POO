@@ -1,4 +1,4 @@
-import java.LocalDateTime;
+import java.time.LocalDateTime;
 
 public class HistorialMovimiento {
     // Atributos de la clase Historial Movimiento

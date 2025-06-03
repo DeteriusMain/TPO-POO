@@ -1,14 +1,14 @@
 public class Producto {
     public String nombre;
     public int id;
-    public categoria Categoria;
+    public Categoria categoria;
     public int cantidadAcumulada;
     public int cantidadMinima;
 
-    public Producto(String nombre, int id, categoria categoria, int cantidadAcumulada, int cantidadMinima) {
+    public Producto(String nombre, int id, Categoria categoria, int cantidadAcumulada, int cantidadMinima) {
         this.nombre = nombre;
         this.id = id;
-        Categoria = categoria;
+        this.categoria = categoria;
         this.cantidadAcumulada = cantidadAcumulada;
         this.cantidadMinima = cantidadMinima;
     }
@@ -29,12 +29,12 @@ public class Producto {
         this.id = id;
     }
 
-    public categoria getCategoria() {
-        return Categoria;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategoria(categoria categoria) {
-        Categoria = categoria;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public int getCantidadAcumulada() {
@@ -54,17 +54,17 @@ public class Producto {
     }
 
     public void DisminuirStock(int cantidad) {
-        cantidadActual -= cantidad;
-        if (cantidadActual < 0) {
-            cantidadActual = 0;
+        cantidadAcumulada -= cantidad;
+        if (cantidadAcumulada < 0) {
+            cantidadAcumulada = 0;
         }
     }
 
     public void AumentarStock(int cantidad) {
-        cantidadActual += cantidad;
+        cantidadAcumulada += cantidad;
     }
 
     public boolean BajoStock() {
-        return cantidadActual <= cantidadMinima;
+        return cantidadAcumulada <= cantidadMinima;
     }
 }
